@@ -13,6 +13,12 @@ const ServiceCard = ({ service }) => {
         duration-300 
         hover:bg-[#CAEB66]
         hover:shadow-lg
+        hover:-translate-y-2
+        hover:scale-[1.02]
+        text-center
+        flex
+        flex-col
+        items-center
       "
     >
       <div className="text-4xl text-primary mb-4 transition-colors duration-300 hover:text-black">
