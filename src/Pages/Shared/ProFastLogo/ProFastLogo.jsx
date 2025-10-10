@@ -2,9 +2,9 @@
 import logo from '../../../assets/logo.png'
 const ProFastLogo = () => {
     return (
-        <div>
+        <div className='flex'>
             <img src={logo} alt="" />
-            <p>ProFast</p>
+            <p className='text-3xl font-bold mt-6'>ProFast</p>
         </div>
     );
 };

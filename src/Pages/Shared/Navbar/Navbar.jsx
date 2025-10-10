@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import navbarImage from '../../../assets/arrow-up-right 1.svg';
 import navbar1 from '../../../assets/navbar1.svg';
+import ProFastLogo from "../ProFastLogo/ProFastLogo";
 
 
 const Navbar = () => {
@@ -31,12 +32,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                
-                   <img src={navbar1} style={{
-                        borderRadius: '99px',
-                        background: 'var(--Colors-Dark-black-12, #1F1F1F)'
-                    }} alt="" />
-               
-                Profast
+                    <a className="btn btn-ghost">
+                        <ProFastLogo></ProFastLogo>
+                    </a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
