@@ -6,7 +6,7 @@ import logo5 from '../../../assets/brands/randstad.png'
 import logo6 from '../../../assets/brands/start-people 1.png'
 import logo7 from '../../../assets/brands/start.png'
 import Marquee from 'react-fast-marquee'
-    
+
 const ClientLogosMarquee = () => {
     const logos = [
         logo1,
@@ -19,12 +19,18 @@ const ClientLogosMarquee = () => {
     ];
 
     return (
-        <div className="py-10 bg-white rounded-[24px] overflow-hidden">
+        <div className="py-10 bg-white rounded-[24px] overflow-hidden text-center">
+            {/* Top text */}
+            <p className="text-[#03373D] text-center font-urbanist text-[28px] font-extrabold leading-normal mb-12">
+                We've helped thousands of sales teams
+            </p>
+
+            {/* Marquee */}
             <Marquee
                 speed={50}
                 direction="left"
                 gradient={false}
-                pauseOnHover={true}  
+                pauseOnHover={true}
             >
                 {logos.map((logo, index) => (
                     <div
@@ -44,10 +50,11 @@ const ClientLogosMarquee = () => {
                     </div>
                 ))}
             </Marquee>
-            <div>
-                <hr className="border-t-2 border-dashed border-[#03464D] my-8" />
-            </div>
+
+            {/* Dashed HR */}
+            <hr className="border-t-2 border-dashed border-[#03464D] my-8 w-2/3 mx-auto" />
         </div>
+
     );
 };
 
