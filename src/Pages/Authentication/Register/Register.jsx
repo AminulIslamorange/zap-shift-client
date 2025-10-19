@@ -1,44 +1,42 @@
 import { useForm } from "react-hook-form";
 
 
-const Login = () => {
+const Register = () => {
     const { register, handleSubmit, formState: { errors }, } = useForm();
 
 
     const onSubmit = (data) => console.log(data)
     return (
-        <div className='card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl'>
-            <div className="text-center">
-                <p className="text-2xl font-bold">Welcome Back</p>
-                <p>Login with Profast</p>
-            </div>
+        <div className='card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl'> 
+
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="card-body">
+                    <div className="text-center">
+                        <p className="text-2xl font-bold">Create an Account</p>
+                        <p>Register with Profast</p>
+                    </div>
 
                     <fieldset className="fieldset">
                         <label className="label">Email</label>
                         <input type="email" className="input" placeholder="Email" {...register("email", { required: true })} />
-                         {errors.email?.type === "required" && (
+                        {errors.email?.type === "required" && (
                             <p role="alert" className="text-red-900">Email is required</p>
                         )}
 
                         <label className="label">Password</label>
                         <input type="password" className="input" placeholder="Password"{...register("password", { required: true })} />
                         {errors.password?.type === "required" && (
-                            <p role="alert"className="text-red-900">Password is required</p>
+                            <p role="alert" className="text-red-900">Password is required</p>
                         )}
 
-                        <div>
-                            <a className="link link-hover">Forgot password?</a>
-                        </div>
+                          <button className="btn btn-neutral mt-4  bg-[#03373D]">Register</button>
 
-                          <button className="btn btn-neutral mt-4 bg-[#03373D]">Login</button>
                     </fieldset>
-                  
+                 
                 </div>
             </form>
         </div>
     );
 };
 
-export default Login;
+export default Register;
