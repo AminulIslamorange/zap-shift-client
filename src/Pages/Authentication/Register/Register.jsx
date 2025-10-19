@@ -1,11 +1,22 @@
 import { useForm } from "react-hook-form";
+import useAuth from "../../../hooks/useAuth";
+import { Link } from "react-router-dom";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 
 const Register = () => {
+    const {createUser}=useAuth();
     const { register, handleSubmit, formState: { errors }, } = useForm();
 
 
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = (data) => {
+        
+        createUser(data.email,data.password)
+        .then(result=>{
+            const user=result.user;
+        })
+        .catch(error=>console.error(error))
+    }
     return (
         <div className='card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl'> 
 
@@ -29,12 +40,14 @@ const Register = () => {
                             <p role="alert" className="text-red-900">Password is required</p>
                         )}
 
-                          <button className="btn btn-neutral mt-4  bg-[#03373D]">Register</button>
+                          <button className="btn btn-primary mt-4  bg-[#03373D]">Register</button>
 
                     </fieldset>
+                    <p>Already Have an Account? <Link  to='/login'><span className="text-green-500 underline">Login</span></Link></p>
                  
                 </div>
             </form>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };
