@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import navbarImage from '../../../assets/arrow-up-right 1.svg';
 import navbar1 from '../../../assets/navbar1.svg';
 import ProFastLogo from "../ProFastLogo/ProFastLogo";
@@ -42,7 +42,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn  mr-4">Sign In</button>
+                <Link to='/login'><button className="btn  mr-4">Sign In</button></Link>
                 <button className="btn bg-[#CAEB66] border-radius-[12px]">Be a rider</button>
                 <img
                     src={navbarImage}
