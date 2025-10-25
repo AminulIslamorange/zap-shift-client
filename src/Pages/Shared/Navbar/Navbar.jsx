@@ -2,15 +2,22 @@ import { Link, NavLink } from "react-router-dom";
 import navbarImage from '../../../assets/arrow-up-right 1.svg';
 import navbar1 from '../../../assets/navbar1.svg';
 import ProFastLogo from "../ProFastLogo/ProFastLogo";
+import useAuth from "../../../hooks/useAuth";
 
 
 const Navbar = () => {
+    const { user } = useAuth();
     const navItems = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/'>About Us</NavLink></li>
         <li><NavLink to='/'>Services</NavLink></li>
         <li><NavLink to='/sendPercel'>Send A Percel</NavLink></li>
         <li><NavLink to='/coverage'>Coverage</NavLink></li>
+
+        {
+            user && <><li><NavLink to='/dashboard'>Dashboard</NavLink></li></>
+        }
+
         <li><NavLink to='/'>About Us</NavLink></li>
         <li><NavLink to='/'>Pricing</NavLink></li>
         <li><NavLink to='/'>Be a Rider</NavLink></li>
@@ -32,10 +39,10 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-               
-                    <a className="btn btn-ghost">
-                        <ProFastLogo></ProFastLogo>
-                    </a>
+
+                <a className="btn btn-ghost">
+                    <ProFastLogo></ProFastLogo>
+                </a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

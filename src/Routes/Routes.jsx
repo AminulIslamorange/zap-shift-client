@@ -7,6 +7,7 @@ import Register from "../Pages/Authentication/Register/Register";
 import Coverage from "../Pages/Coverage/Coverage";
 import PrivetRoutes from "./PrivetRoutes";
 import SendPercel from "../Pages/SendPercel/SendPercel";
+import DashBoardLayout from "../Layout/DashBoardLayout";
 
 export const router = createBrowserRouter([
     {
@@ -43,6 +44,13 @@ export const router = createBrowserRouter([
             }
 
 
+        ]
+    },
+    {
+        path:'/dashboard',
+        element:<PrivetRoutes> <DashBoardLayout></DashBoardLayout></PrivetRoutes>,
+        children:[
+            
         ]
     }
 ]);
