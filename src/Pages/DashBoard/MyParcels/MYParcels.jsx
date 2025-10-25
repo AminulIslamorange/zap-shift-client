@@ -8,7 +8,7 @@ const MYParcels = () => {
     const {user}=useAuth();
     const axiosSecure=useAxiosSecure();
 
-    const {data:parcels=[]}=useQuery({
+    const {data:parcels=[],refetch}=useQuery({
     queryKey:['my-parcel', user?.email],
     queryFn: async ()=>{
         const res=await axiosSecure.get(`parcels?email=${user.email}`);
